@@ -1,0 +1,21 @@
+PODS:
+  - SBTUITestTunnelHost (0.2.7)
+
+DEPENDENCIES:
+  - SBTUITestTunnelHost (from `https://github.com/Subito-it/SBTUITestTunnelHost.git`)
+
+EXTERNAL SOURCES:
+  SBTUITestTunnelHost:
+    :git: https://github.com/Subito-it/SBTUITestTunnelHost.git
+
+CHECKOUT OPTIONS:
+  SBTUITestTunnelHost:
+    :commit: 3cf7e2ddb1e40ce1f9f5f35b1be203b0c20e6edb
+    :git: https://github.com/Subito-it/SBTUITestTunnelHost.git
+
+SPEC CHECKSUMS:
+  SBTUITestTunnelHost: 71dfc92f031803f4eb050adf7bbf67498f7a1efe
+
+PODFILE CHECKSUM: b35eebc669b6573e5d4a812b1c33c42c5f28686c
+
+COCOAPODS: 1.8.4

@@ -19,9 +19,16 @@ class PushNotificationDemoUITests: XCTestCase {
         let customValue2 = "custom value 2"
         try deliverPushNotification(title: title, body: body, customKey1: customValue1, customKey2: customValue2)
         
-        wait { springBoard.otherElements["NotificationShortLookView"].exists }
+        let notification: XCUIElement
+        if #available(iOS 14.0, *) {
+            notification = springBoard.otherElements.descendants(matching: .any)["NotificationShortLookView"]
+        } else {
+            notification = springBoard.otherElements["NotificationShortLookView"]
+        }
+    
+        wait { notification.exists }
         
-        springBoard.otherElements["NotificationShortLookView"].tap()
+        notification.tap()
         wait { app.alerts[title].exists }
         
         XCTAssert(app.alerts[title].staticTexts["\(body)\n\(customValue1)\n\(customValue2)"].exists)

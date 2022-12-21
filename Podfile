@@ -9,6 +9,11 @@ target 'PushNotificationDemo' do
 
   target 'PushNotificationDemoUITests' do
     # Pods for testing
-    pod 'SBTUITestTunnelHost', :git => 'https://github.com/Subito-it/SBTUITestTunnelHost.git'
+    pod 'SBTUITestTunnelHost'
   end
+end
+
+post_install do |installer|
+  puts "Fetching SBTUITestTunnelHost Server"
+  system("curl -s https://raw.githubusercontent.com/Subito-it/SBTUITestTunnelHost/master/SBTUITunnelHostServer/Binary/SBTUITestTunnelServer.zip > /tmp/SBTUITestTunnelServer.zip; unzip -qqo /tmp/SBTUITestTunnelServer.zip -d #{installer.pods_project.path.dirname}/SBTUITestTunnelHost && rm -rf /tmp/SBTUITestTunnelServer.zip")
 end

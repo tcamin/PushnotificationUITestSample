@@ -1,21 +1,16 @@
 PODS:
-  - SBTUITestTunnelHost (0.2.7)
+  - SBTUITestTunnelHost (0.5.0)
 
 DEPENDENCIES:
-  - SBTUITestTunnelHost (from `https://github.com/Subito-it/SBTUITestTunnelHost.git`)
+  - SBTUITestTunnelHost
 
-EXTERNAL SOURCES:
-  SBTUITestTunnelHost:
-    :git: https://github.com/Subito-it/SBTUITestTunnelHost.git
-
-CHECKOUT OPTIONS:
-  SBTUITestTunnelHost:
-    :commit: 3cf7e2ddb1e40ce1f9f5f35b1be203b0c20e6edb
-    :git: https://github.com/Subito-it/SBTUITestTunnelHost.git
+SPEC REPOS:
+  trunk:
+    - SBTUITestTunnelHost
 
 SPEC CHECKSUMS:
-  SBTUITestTunnelHost: 71dfc92f031803f4eb050adf7bbf67498f7a1efe
+  SBTUITestTunnelHost: 03ca0bca7851e667fbcdec4ae2c7a898e685dff3
 
-PODFILE CHECKSUM: b35eebc669b6573e5d4a812b1c33c42c5f28686c
+PODFILE CHECKSUM: f93131fcc6ecabc44ba2575a4abae169eb665b61
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.11.3

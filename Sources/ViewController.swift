@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  PushNotificationDemo
-//
-//  Created by tomas on 06/02/2020.
-//  Copyright © 2020 Subito.it. All rights reserved.
-//
-
 import UIKit
 import UserNotifications
 

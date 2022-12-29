@@ -1,0 +1,24 @@
+name: PushNotificationDemo
+options:
+  bundleIdPrefix: com.camin
+  postGenCommand: "pod install; xed ."
+targets:
+  Sample:
+    type: application
+    platform: iOS
+    deploymentTarget: 15.0
+    settings:
+      base:
+        INFOPLIST_FILE: "Sources/Info.plist"
+    sources:
+      - path: Sources
+  UITests:
+    type: bundle.ui-testing
+    platform: iOS
+    settings:
+      base:
+        INFOPLIST_FILE: "UITests/Info.plist"
+    sources:
+      - UITests
+    dependencies:
+      - target: Sample

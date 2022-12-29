@@ -1,7 +1,7 @@
 import XCTest
 import SBTUITestTunnelHost
 
-class PushNotificationDemoUITests: XCTestCase {
+class SampleTests: XCTestCase {
     func testPushNotifications() throws {
         let app = XCUIApplication()
         app.launch()
@@ -35,7 +35,7 @@ class PushNotificationDemoUITests: XCTestCase {
     }
 }
 
-private extension PushNotificationDemoUITests {
+private extension SampleTests {
     func deviceIdentifier() throws -> String {
         let bundlePathComponents = Bundle.main.bundleURL.pathComponents
         guard let devicesIndex = bundlePathComponents.firstIndex(where: { $0 == "Devices" }),
@@ -58,11 +58,11 @@ private extension PushNotificationDemoUITests {
         let jsonPayloadUrl = URL(fileURLWithPath: "/tmp/\(UUID().uuidString).json")
         try data.write(to: jsonPayloadUrl)
         
-        host.executeCommand("xcrun simctl push \(identifier) com.subito.PushNotificationDemo \(jsonPayloadUrl.path); rm \(jsonPayloadUrl.path)")
+        host.executeCommand("xcrun simctl push \(identifier) com.camin.Sample \(jsonPayloadUrl.path); rm \(jsonPayloadUrl.path)")
     }
 }
 
-private extension PushNotificationDemoUITests {
+private extension SampleTests {
     func grantNotificationPermissionsIfNeeded() {
         // We should use addUIInterruptionMonitor but for the sake of this demo
         // which is dismissing the app immediately after launch we'll recurr to
